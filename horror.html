@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audiobooks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+         <li>
+            <a href="index.html">Home</a>
+            <a href="about_us.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+         </li>
+        </ul>
+      </nav>
+    <h1>Let's Listen to the Ghost Story Again Today...
+    </h1>
+  </header>
+  
+  
+      
+        <section id="audiobooksList">
+          <div class="card-container">
+            <!-- First card -->
+            <div class="audiobook">
+              <div class="card">
+                <img src="Images/ghost.jpg" alt="alternative-text" width="230" height="230">
+                <p>ALONE GHOST</p>
+                <audio controls>
+                  <source src="audio/horror_kehna.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+        
+            <!-- Second card (Ramayan) -->
+            <div class="audiobook">
+              <div class="card">
+                <img src="Images/dark night.jpg" alt="alternative-text" width="230" height="230">
+                <p>DARK NIGHT</p>
+                <audio controls>
+                  <source src="audio/horor_ghost.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+        
+            <!-- Third card -->
+            <div class="audiobook">
+              <div class="card">
+                <img src="Images/fear.avif" alt="alternative-text" width="230" height="230">
+                <p>NIGHT FEAR</p>
+                <audio controls>
+                  <source src="audio/darr.mp3.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+        
+            <!-- Fourth card -->
+            <div class="audiobook">
+              <div class="card">
+                <img src="Images/horror story.jpg" alt="alternative-text" width="230" height="230">
+                <p>GHOST STORY</p>
+                <audio controls>
+                  <source src="audio/kahaniya.mp3.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </div>
+        </section>
+         
+        <section id="audiobooksList">
+          <div class="card-container">
+            <!-- First card -->
+            <div class="audiobook">
+              <div class="card">
+                <img src="Images/horror1.avif" alt="alternative-text" width="230" height="230">
+                <p>MAY I COMING</p>
+                <audio controls>
+                  <source src="audio/kahaniya.mp3.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+        
+            <!-- Second card (Ramayan) -->
+            <div class="audiobook">
+              <div class="card">
+                <img src="Images/horror2.jpg" alt="alternative-text" width="230" height="230">
+                <p>SOMEONE HERE</p>
+                <audio controls>
+                  <source src="audio/darr.mp3.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+        
+            <!-- Third card -->
+            <div class="audiobook">
+              <div class="card">
+                <img src="Images/horror3.jpg" alt="alternative-text" width="230" height="230">
+                <p>BLACK MAGIC</p>
+                <audio controls>
+                  <source src="audio/darr.mp3.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+        
+            <!-- Fourth card -->
+            <div class="audiobook">
+              <div class="card">
+                <img src="Images/horror4.jpg" alt="alternative-text" width="230" height="230">
+                <p>DEATH HOUSE</p>
+                <audio controls>
+                  <source src="audio/horror_Pauri_Uttarakhand.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </div>
+        </section>
+         
+
+      </section>
+      
+      
+
+
+  <script>
+    // Function to load audiobooks from the specified URL
+    const loadAudiobooks = (type=horror) => {
+      // Fetch content from the specified URL
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          // Display the fetched content in the designated section
+          document.getElementById('audiobooksList').innerHTML = data;
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Call loadAudiobooks function when the page loads
+    window.onload = () => {
+      // Get the URL parameters
+      const params = new URLSearchParams(window.location.search);
+      // Get the type parameter from the URL
+      const type = params.get('type');
+      // If type parameter exists, load the corresponding audiobook list
+      if (type) {
+        loadAudiobooks(${type}.html?type=${type});
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audiobooks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+         <li>
+            <a href="index.html">Home</a>
+            <a href="about_us.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+         </li>
+        </ul>
+      </nav>
+  
+    
+    <h1>True Love Stories Never have Endings</h1>
+  </header>
+  
+  <section id="audiobooksList">
+    <div class="card-container">
+      <!-- First card -->
+      <div class="audiobook">
+        <div class="card">
+          <img src="Images/ab kya kehena hoga.jpg" alt="alternative-text" width="230" height="230">
+          <P>मुझे कुछ केहना है</P>
+          <audio controls>
+            <source src="audio/Ab Kehna Hoga .mp3.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <!-- Second card  -->
+      <div class="audiobook">
+        <div class="card">
+          <img src="Images/love you.jpg" alt="alternative-text" width="230" height="230">
+          <P>मोहब्बत का इजहार</P>
+          <audio controls>
+            <source src="audio/Love You.mp3.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <!-- third card  -->
+      <div class="audiobook">
+        <div class="card">
+          <img src="Images/first love.jpg" alt="alternative-text" width="230" height="230">
+          <P>पहेला प्यार</P>
+          <audio controls>
+            <source src="audio/Pehla Pyar.mp3.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+
+      <!-- Fourth card -->
+      <div class="audiobook">
+        <div class="card">
+          <img src="Images/pyaar.jpg" alt="alternative-text" width="230" height="230">
+          <P>प्यार की बारिश</P>
+          <audio controls>
+            <source src="audio/Pyaar.mp3.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+      
+  </section>
+
+  <script>
+    // Function to load audiobooks from the specified URL
+    const loadAudiobooks = (type=love) => {
+      // Fetch content from the specified URL
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          // Display the fetched content in the designated section
+          document.getElementById('audiobooksList').innerHTML = data;
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Call loadAudiobooks function when the page loads
+    window.onload = () => {
+      // Get the URL parameters
+      const params = new URLSearchParams(window.location.search);
+      // Get the type parameter from the URL
+      const type = params.get('type');
+      // If type parameter exists, load the corresponding audiobook list
+      if (type) {
+        loadAudiobooks(${type}.html?type=${type});
+      }
+    };
+  </script>
+</body>
+</html>
