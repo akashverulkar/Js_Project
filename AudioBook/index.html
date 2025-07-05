@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audiobook Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <div class="container"></div>
+  <header>
+    <h1>Audiobook Library</h1>
+ 
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+          <a href="about_us.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- <input type="text" id="searchInput" placeholder="Search..." oninput="searchBooks()"> -->
+    
+  </header>
+
+  <div class="flex">
+
+    <div class="text">
+      <section id="typesOfBooks">
+      <h2 style="text-align: center;">Types of Books</h2>
+    </div>
+
+    <div class="book">
+    <section id="typesOfBooks">
+        
+        <div class="bookTypes">
+          <div class="bookType"  data-category="spiritual">
+            <a href="spiritual.html?type=spiritual">
+              <img src="Images/spiritual.jpg" alt="Spiritual Books">
+              <p>Spiritual</p>
+            </a>
+          </div>
+          <div class="bookType" data-category="love">
+            <a href="love.html?type=love">
+              <img src="Images/lovely.jpg" alt="Love Story Books">
+              <p>Love Story</p>
+            </a>
+          </div>
+          <!-- Add other types of books here -->
+        </div>
+        <div class="bookType" data-category="horror">
+            <a href="horror.html?type=love">
+              <img src="Images/horror.jpg" alt="Horror Books">
+              <p>Horror</p>
+            </a>
+          </div>
+          <div class="bookType" data-category="historical">
+            <a href="historical.html?type=love">
+              <img src="Images/historical.jpg" alt="Historical Books">
+              <p>Historical</p>
+            </a>
+          </div>
+          <div class="bookType" data-category="thriller">
+            <a href="thriller.html?type=love">
+              <img src="Images/thriller.jpg" alt="Thriller Books">
+              <p>Thriller Books</p>
+            </a>
+          </div>
+      </section>
+      </div>
+      </div>
+
+
+<script>
+  const searchBooks = () => {
+    let filter = document.getElementById('searchInput').value.toUpperCase();
+    let bookTypes = document.querySelectorAll('.bookType');
+
+    bookTypes.forEach(bookType => {
+      let category = bookType.getAttribute('data-category').toUpperCase();
+      let isVisible = category.includes(filter);
+      bookType.style.display = isVisible ? 'block' : 'none';
+    });
+  }
+</script>
+  
+</body>
+</html>
